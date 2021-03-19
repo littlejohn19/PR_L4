@@ -22,3 +22,9 @@ body {
 .buttons {
     padding: 10px 10px 10px 0;
 }
+
+.scroll {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
