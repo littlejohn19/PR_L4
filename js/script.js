@@ -1,214 +1,149 @@
-let preQuestions =
-    [
-        {
-            "category": "Entertainment: Music",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "The song &quot;Twin Size Mattress&quot; was written by which band?",
-            "correct_answer": "The Front Bottoms",
-            "answers": ["The Front Bottoms", "Twenty One Pilots", "The Wonder Years", "The Smith Street Band"]
-        },
-        {
-            "category": "Vehicles",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which Japanese company is the world&#039;s largest manufacturer of motorcycles?",
-            "correct_answer": "Honda",
-            "answers": ["Yamaha", "Suzuki", "Kawasaki", "Honda"]
-        },
-        {
-            "category": "General Knowledge",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which of the following buildings is example of a structure primarily built in the Art Deco architectural style?",
-            "correct_answer": "Niagara Mohawk Building",
-            "answers": ["Niagara Mohawk Building", "Taipei 101", "One Detroit Center", "Westendstrasse 1"]
-        },
-        {
-            "category": "Entertainment: Video Games",
-            "type": "multiple",
-            "difficulty": "easy",
-            "question": "In most FPS video games such as Counter-Strike, shooting which part of the body does the highest damage?",
-            "correct_answer": "Head",
-            "answers": ["Arm", "Leg", "Chest", "Head"]
-        },
-        {
-            "category": "General Knowledge",
-            "type": "boolean",
-            "difficulty": "medium",
-            "question": "The term &quot;Spam&quot; came before the food product &quot;Spam&quot;.",
-            "correct_answer": "False",
-            "answers": ["True", "False"]
-        },
-        {
-            "category": "Entertainment: Television",
-            "type": "multiple",
-            "difficulty": "easy",
-            "question": "In the show Stranger Things, what is Eleven&#039;s favorite breakfast food?",
-            "correct_answer": "Eggo Waffles",
-            "answers": ["Toast", "Captain Crunch", "Bacon and Eggs", "Eggo Waffles"]
-        },
-        {
-            "category": "Entertainment: Video Games",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "In the game Paper Mario for the Nintendo 64 the first partner you meet is a Goomba, what is its name?",
-            "correct_answer": "Goombario",
-            "answers": ["Goombella", "Goombarry", "Goomby", "Goombario"]
-        },
-        {
-            "category": "History",
-            "type": "multiple",
-            "difficulty": "easy",
-            "question": "When was Google founded?",
-            "correct_answer": "September 4, 1998",
-            "answers": ["October 9, 1997", "December 12, 1989", "Feburary 7th, 2000", "September 4, 1998"]
-        },
-        {
-            "category": "Entertainment: Video Games",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which is not a playable character in the 2005 video game Killer7?",
-            "correct_answer": "Frank Smith",
-            "answers": ["Frank Smith", "Mask de Smith", "Dan Smith", "Coyote Smith"]
-        },
-        {
-            "category": "Geography",
-            "type": "boolean",
-            "difficulty": "medium",
-            "question": "The capital of the US State Ohio is the city of Chillicothe.",
-            "correct_answer": "False",
-            "answers": ["True", "False"]
-        },
-        {
-            "category": "Entertainment: Video Games",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which company did Bethesda purchase the Fallout Series from?",
-            "correct_answer": "Interplay Entertainment",
-            "answers": ["Capcom", "Interplay Entertainment", "Blizzard Entertainment", "Nintendo"]
-        },
-        {
-            "category": "Entertainment: Music",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which iconic album cover features the pulsar waves of CP 1919 placed in the center of the cover?",
-            "correct_answer": "Unknown Pleasures",
-            "answers": ["The Dark Side of the Moon", "Unknown Pleasures", "London Calling", "The Velvet Underground &amp; Nico"]
-        },
-        {
-            "category": "Politics",
-            "type": "boolean",
-            "difficulty": "medium",
-            "question": "During the 2016 United States presidential election, the State of California possessed the most electoral votes, having 55.",
-            "correct_answer": "True",
-            "answers": ["False", "True"]
-        },
-        {
-            "category": "History",
-            "type": "multiple",
-            "difficulty": "easy",
-            "question": "Who was the first prime minister of Canada?",
-            "correct_answer": "John Macdonald",
-            "answers": ["John Macdonald", "John Abbott", "Alexander Mackenzie", "Robert Borden"]
-        },
-        {
-            "category": "Geography",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "The land mass of modern day Turkey is called what?",
-            "correct_answer": "Anatolia",
-            "answers": ["Anatolia", "Ismuth of Ottoma", "Ottoma", "Ismuth of Anatolia"]
-        },
-        {
-            "category": "Sports",
-            "type": "boolean",
-            "difficulty": "easy",
-            "question": "In association football, or soccer, a corner kick is when the game restarts after someone scores a goal.",
-            "correct_answer": "False",
-            "answers": ["True", "False"]
-        },
-        {
-            "category": "Entertainment: Film",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Who played the Cenobite called &quot;Pinhead&quot; in the original Hellraiser films?",
-            "correct_answer": "Doug Bradley",
-            "answers": ["Doug Bradley", "Doug Jones", "Doug Savant", "Doug Benson"]
-        },
-        {
-            "category": "Geography",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which of these countries is the smallest by population?",
-            "correct_answer": "Norway",
-            "answers": ["Slovakia", "Norway", "Finland", "Hong Kong"]
-        },
-        {
-            "category": "Science: Computers",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which internet company began life as an online bookstore called &#039;Cadabra&#039;?",
-            "correct_answer": "Amazon",
-            "answers": [
-                "eBay",
-                "Overstock",
-                "Shopify",
-                "Amazon"
-            ]
-        },
-        {
-            "category": "Science: Computers",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Generally, which component of a computer draws the most power?",
-            "correct_answer": "Video Card",
-            "answers": [
-                "Hard Drive",
-                "Processor",
-                "Power Supply",
-                "Video Card"
-            ]
-        }];
+let preQuestions = null;
 
-let next = document.querySelector('.next');
+let nextBtn = document.querySelector('.next');
+let prevBtn = document.querySelector('.previous');
 
-let question = document.querySelector('.question');
-let answers = document.querySelectorAll('.list-group-item');
+let quizEl = document.querySelector('.list');
+let questionEl = document.querySelector('.question');
+let questionNumberEl = document.querySelector('.question-number');
+let answersEls = document.querySelectorAll('.list-group-item');
+let userScorePoint = document.querySelector('.score');
+let resultTableEl = document.querySelector('.result-table');
 
-let pointsElem = document.querySelector('.score');
-let restart = document.querySelector('.restart');
+let resultsEl = document.querySelector('.results');
+let pointsEl = document.querySelector('.score');
+let restartBtn = document.querySelector('.restart');
 let index = 0;
 let points = 0;
 
-for (let i = 0; i < answers.length; i++) {
-    answers[i].addEventListener('click', doAction);
+let history = JSON.parse(localStorage.getItem('history') || JSON.stringify([]))
+let areAnswersBlocked = false;
+
+fetch('https://quiztai.herokuapp.com/api/quiz')
+	.then(resp => resp.json())
+	.then(resp => {
+		preQuestions = resp;
+		preQuestions.map(item => {
+			item.selected_answer = null;
+		});
+		showQuestion();
+	});
+
+const markCorrect = answer => {
+	answer.classList.add('correct');
 }
 
-function doAction(event) {
-    //event.target - Zwraca referencję do elementu, do którego zdarzenie zostało pierwotnie wysłane.
-    if (event.target.innerHTML === preQuestions[index].correct_answer) {
-        points++;
-        pointsElem.innerText = points;
-        markCorrect(event.target);
-    }
-    else {
-        markInCorrect(event.target);
-    }
-    disableAnswers();
+const markInCorrect = answer => {
+	answer.classList.add('incorrect');
 }
 
+const disableAnswers = () => {
+	areAnswersBlocked = true;
+}
 
+for (let i = 0; i < answersEls.length; i++) {
+	answersEls[i].addEventListener('click', e => {
+		let isAnswered = preQuestions[index].selected_answer !== null;
+		if (areAnswersBlocked || isAnswered) {
+			e.preventDefault()
+			return;
+		}
 
-restart.addEventListener('click', function (event) {
-    event.preventDefault();
+		if (e.target.innerHTML === preQuestions[index].correct_answer) {
+			points++;
+			pointsEl.innerText = points;
+			markCorrect(e.target);
+		} else {
+			markInCorrect(e.target);
+		}
+		preQuestions[index].selected_answer = e.target.innerHTML;
+		disableAnswers();
+	});
+}
 
-    index = 0;
-    points = 0;
-    let userScorePoint = document.querySelector('.score');
-    userScorePoint.innerHTML = points;
-    setQuestion(index);
-    activateAnswers();
-    list.style.display = 'block';
-    results.style.display = 'none';
+nextBtn.addEventListener('click', e => {
+	if (index === preQuestions.length - 1) {
+		finish();
+	} else if (index < preQuestions.length) {
+		index++;
+		showQuestion();
+	}
 });
+
+prevBtn.addEventListener('click', e => {
+	if (index > 0) {
+		index--;
+		showQuestion();
+	}
+});
+
+restartBtn.addEventListener('click', e => {
+	e.preventDefault();
+
+	index = 0;
+	points = 0;
+	userScorePoint.innerHTML = points;
+
+	quizEl.style.display = 'block';
+	resultsEl.style.display = 'none';
+
+	preQuestions.map(item => {
+		item.selected_answer = null;
+	});
+
+	showQuestion();
+});
+
+const finish = () => {
+	quizEl.style.display = 'none';
+	resultsEl.style.display = 'block';
+
+	history.push(points);
+
+	localStorage.setItem('history', JSON.stringify(history));
+
+	let sum = history.reduce((a, b) => a + b, 0);
+	let avg = (sum / history.length) || 0;
+
+	resultTableEl.innerHTML = '';
+	history.map((points, key) => {
+		resultTableEl.innerHTML += `<tr>
+                <th scope="row">${key + 1}</th>
+                <td class="userScorePoint">${points}</td>
+                <td class="average">${parseFloat(avg).toFixed(2)}</td>
+            </tr>`
+	});
+}
+
+const clearAnswers = () => {
+	for (let i = 0; i < answersEls.length; i++) {
+		answersEls[i].innerHTML = '';
+		answersEls[i].style.display = 'none';
+		answersEls[i].classList.remove('correct');
+		answersEls[i].classList.remove('incorrect');
+	}
+}
+
+const showAnswers = () => {
+	clearAnswers();
+	areAnswersBlocked = false;
+
+	for (let i = 0; i < preQuestions[index].answers.length; i++) {
+		answersEls[i].innerHTML = preQuestions[index].answers[i];
+		answersEls[i].style.display = 'block';
+
+		if (preQuestions[index].answers[i] === preQuestions[index].selected_answer) {
+			if (preQuestions[index].selected_answer === preQuestions[index].correct_answer) {
+				answersEls[i].classList.add('correct');
+			} else {
+				answersEls[i].classList.add('incorrect');
+			}
+		}
+	}
+}
+
+const showQuestion = () => {
+	questionEl.innerHTML = preQuestions[index].question;
+	questionNumberEl.innerHTML = index + 1;
+	showAnswers();
+}
